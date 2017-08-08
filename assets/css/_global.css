@@ -1,4 +1,4 @@
 body {
-  padding: 50px;
-  font-family: system-ui;
+  background: #000 no-repeat center center fixed;
+  background-size: contain;
 }
