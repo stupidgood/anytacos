@@ -18,11 +18,14 @@ $.ajax({
   success: function(data) {
     if (data[0].quantity_on_hand > 0) {
       giphy('thumbs up');
+      $('#answer').text('Yes');
     } else {
       giphy('no');
+      $('#answer').text('No');
     }
   },
   error: function() {
     giphy('error');
+    $('#answer').text('Error');
   },
 })
