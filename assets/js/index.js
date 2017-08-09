@@ -26,6 +26,5 @@ $.ajax({
   },
   error: function() {
     giphy('error');
-    $('#answer').text('Error');
   },
 })
