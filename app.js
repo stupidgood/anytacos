@@ -4,6 +4,7 @@ const htmlStandards = require('reshape-standard')
 const cssStandards = require('spike-css-standards')
 const jsStandards = require('spike-js-standards')
 const pageId = require('spike-page-id')
+const DefinePlugin = require('webpack').DefinePlugin
 const env = process.env.NODE_ENV
 
 module.exports = {
@@ -17,5 +18,12 @@ module.exports = {
     minify: env === 'production',
     warnForDuplicates: env !== 'production'
   }),
-  babel: jsStandards()
+  babel: jsStandards(),
+  plugins: [
+    new DefinePlugin({
+      SQUARE_PERSONAL_ACCESS_TOKEN: JSON.stringify(process.env.SQUARE_PERSONAL_ACCESS_TOKEN),
+      SQUARE_LOCATION_ID: JSON.stringify(process.env.SQUARE_LOCATION_ID),
+      GIPHY_API_KEY: JSON.stringify(process.env.GIPHY_API_KEY)
+    })
+  ]
 }
