@@ -1,11 +1,11 @@
-const $ = require('jquery')
+import $ from 'jquery';
 
 function giphy(searchString) {
   $.ajax({
     url: 'https://api.giphy.com/v1/gifs/translate?api_key=' + GIPHY_API_KEY
  + '&s=' + searchString,
     success: function(data) {
-      $('body').css('background-image', 'url(' + data.data.images.fixed_height.url + ')');
+      $('main').css('background-image', 'url(' + data.data.images.fixed_height.url + ')');
     },
   })
 }
@@ -27,4 +27,4 @@ $.ajax({
   error: function() {
     giphy('error');
   },
-})
+});
