@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,51 +24,17 @@
         box-sizing: border-box;
       }
 
-      body,
       html,
-      main {
+      body {
+        background: #000;
+        height: 100%;
         margin: 0;
         padding: 0;
-        height: 100%;
-        min-height: 100%;
-      }
-
-      body {
-        align-items: center;
-        display: grid;
-        grid-template-areas: "main";
-        grid-template-columns: 100%;
-        grid-template-rows: auto;
-        justify-content: center;
-      }
-
-      main {
-        background: #000 no-repeat center center fixed;
-        background-size: contain;
-        color: #fff;
-        grid-area: main;
-        position: relative;
-      }
-
-      #answer {
-        display: block;
-        font-family: Impact, Anton, sans-serif;
-        font-size: calc(4em + 1vw);
-        font-weight: 800;
-        left: 0;
-        line-height: 1;
-        margin: 0;
-        position: absolute;
-        text-transform: uppercase;
-        top: 0;
+        width: 100%;
       }
     </style>
   </head>
   <body>
-    <main>
-      <block name="content"></block>
-    </main>
-
     <block name="javascript">
       <script src="js/main.js" defer></script>
     </block>

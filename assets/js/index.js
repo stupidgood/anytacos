@@ -5,7 +5,7 @@ function giphy(searchString) {
     url: 'https://api.giphy.com/v1/gifs/translate?api_key=' + GIPHY_API_KEY
  + '&s=' + searchString,
     success: function(data) {
-      $('main').css('background-image', 'url(' + data.data.images.fixed_height.url + ')');
+      $('body').css('background', 'no-repeat center/contain url(' + data.data.images.fixed_height.url + ')');
     },
   })
 }
@@ -18,10 +18,8 @@ $.ajax({
   success: function(data) {
     if (data[0].quantity_on_hand > 0) {
       giphy('thumbs up');
-      $('#answer').text('Yes');
     } else {
       giphy('no');
-      $('#answer').text('No');
     }
   },
   error: function() {
