@@ -1,10 +1,11 @@
 import $ from 'jquery';
 
-function tenor(searchString) {
+function giphy(searchString) {
   $.ajax({
-    url: 'https://api.tenor.com/v1/search?key=' + TENOR_API_KEY + '&limit=50&safesearch=strict&q=' + searchString,
+    url: 'https://api.giphy.com/v1/gifs/translate?api_key=' + GIPHY_API_KEY
+ + '&s=' + searchString,
     success: function(data) {
-      $('body').css('background', 'no-repeat center/contain url(' + data.results[Math.floor((Math.random() * 50))].media[0].gif.url + ')');
+      $('body').css('background', 'no-repeat center/contain url(' + data.data.images.fixed_height.url + ')');
     },
   })
 }
@@ -16,12 +17,12 @@ $.ajax({
   },
   success: function(data) {
     if (data[0].quantity_on_hand > 0) {
-      tenor('thumbs up');
+      giphy('thumbs up');
     } else {
-      tenor('no');
+      giphy('no');
     }
   },
   error: function() {
-    tenor('error');
+    giphy('error');
   },
 });

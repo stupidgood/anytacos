@@ -14,7 +14,7 @@ module.exports = {
   babel: jsStandards(),
   plugins: [
     new DefinePlugin({
-      TENOR_API_KEY: JSON.stringify(process.env.TENOR_API_KEY),
+      GIPHY_API_KEY: JSON.stringify(process.env.GIPHY_API_KEY),
       SQUARE_LOCATION_ID: JSON.stringify(process.env.SQUARE_LOCATION_ID),
       SQUARE_PERSONAL_ACCESS_TOKEN: JSON.stringify(process.env.SQUARE_PERSONAL_ACCESS_TOKEN),
     })
