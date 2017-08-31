@@ -43,9 +43,36 @@
         padding: 0;
         width: 100%;
       }
+      main {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+      }
+      #spinner {
+        animation: shake 2s infinite linear;
+        width: 25%;
+      }
+      @keyframes shake {
+        from, to {
+          transform: translate3d(0, 0, 0);
+        }
+      
+        10%, 30%, 50%, 70%, 90% {
+          transform: translate3d(-10px, 0, 0);
+        }
+      
+        20%, 40%, 60%, 80% {
+          transform: translate3d(10px, 0, 0);
+        }
+      }   
     </style>
   </head>
   <body>
+    <main>
+      <block name="content"></block>
+    </main>
+
     <block name="javascript">
       <script src="js/main.js" defer></script>
     </block>

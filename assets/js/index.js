@@ -6,6 +6,7 @@ function giphy(searchString) {
  + '&s=' + searchString,
     success: function(data) {
       $('body').css('background', 'no-repeat center/contain url(' + data.data.images.fixed_height.url + ')');
+      $('#spinner').css('display', 'none');
     },
   })
 }
