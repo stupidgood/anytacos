@@ -19,8 +19,10 @@ $.ajax({
   success: function(data) {
     if (data[0].quantity_on_hand > 0) {
       giphy('thumbs up');
+      console.log(data[0].quantity_on_hand);
     } else {
       giphy('no');
+      console.log(data[0].quantity_on_hand);
     }
   },
   error: function() {
