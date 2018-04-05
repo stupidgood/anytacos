@@ -17,11 +17,17 @@ $.ajax({
     xhr.setRequestHeader('Authorization', 'Bearer ' + SQUARE_PERSONAL_ACCESS_TOKEN);
   },
   success: function(data) {
-    console.log(data[0].quantity_on_hand);
-    if (data[0].quantity_on_hand > 0) {
-      giphy('thumbs up');
-    } else {
-      giphy('no');
+    // Loop through object returned from Square
+    for (var i = 0; i < data.length; i++) {
+      // Check if element is taco based on `variation_id```
+      if (data[i].variation_id === 'FED397C3-6C0A-4F8D-ACAB-A00E7E37C6B8') {
+        // Check if any tacos on hand
+        if (data[i].quantity_on_hand > 0) {
+          giphy('thumbs up');
+        } else {
+          giphy('no');
+        }
+      }
     }
   },
   error: function() {
