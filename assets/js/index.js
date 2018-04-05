@@ -5,7 +5,7 @@ function giphy(searchString) {
     url: 'https://api.giphy.com/v1/gifs/translate?api_key=' + GIPHY_API_KEY
  + '&s=' + searchString,
     success: function(data) {
-      $('body').css('background', 'no-repeat center/contain url(' + data.data.images.fixed_height.url + ')');
+      $('body').css('background', 'no-repeat center/contain url(' + data.data.images.fixed_height_downsampled.url + ')');
       $('#spinner').css('display', 'none');
     },
   })
