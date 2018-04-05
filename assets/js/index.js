@@ -17,12 +17,11 @@ $.ajax({
     xhr.setRequestHeader('Authorization', 'Bearer ' + SQUARE_PERSONAL_ACCESS_TOKEN);
   },
   success: function(data) {
+    console.log(data[0].quantity_on_hand);
     if (data[0].quantity_on_hand > 0) {
       giphy('thumbs up');
-      console.log(data[0].quantity_on_hand);
     } else {
       giphy('no');
-      console.log(data[0].quantity_on_hand);
     }
   },
   error: function() {
