@@ -9,7 +9,7 @@
   "bugs": "https://github.com/stupidgood/anytacos/issues",
   "dependencies": {
     "dotenv": "^4.0.0",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "reshape-standard": "^3.0.0",
     "spike": "^2.0.0",
     "spike-js-standards": "^2.0.2",
